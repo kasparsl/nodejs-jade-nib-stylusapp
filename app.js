@@ -48,7 +48,7 @@ app.use(express.static(__dirname+'/public'));
 
 app.get('/',routes.index);
 app.get('/userlist',routes.userlist(db));
-//app.post('/adduser',routes.adduser(db));
+app.post('/adduser',routes.adduser(db));
 
 app.listen(portnumber);
 console.log('Server is now running on port '+portnumber);
