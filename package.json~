@@ -13,7 +13,10 @@
   "dependencies":{
    "express": "*",
    "jade": "*",
-   "nib": "*"
+   "nib": "*",
+   "stylus": "*",
+   "mongodb": "*",
+   "monk": "*"
   },
   "keywords": [
     "Jade",

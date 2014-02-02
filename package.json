@@ -14,7 +14,10 @@
    "express": "*",
    "jade": "*",
    "nib": "*",
-   "stylus": "*"
+   "stylus": "*",
+   "mongodb": "*",
+   "monk": "*",
+   "routes": "*"
   },
   "keywords": [
     "Jade",
