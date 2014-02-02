@@ -1,0 +1,29 @@
+{
+  "name": "nodejs-jade-nib-stylusapp",
+  "version": "0.0.1",
+  "description": "Express app with Jade, Stylus, Nib",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/kasparsl/nodejs-jade-nib-stylusapp.git"
+  },
+  "dependencies":{
+   "express": "*",
+   "jade": "*",
+   "nib": "*"
+  },
+  "keywords": [
+    "Jade",
+    "nib",
+    "stylus"
+  ],
+  "author": "Kaspars Leinis",
+  "license": "GNU",
+  "bugs": {
+    "url": "https://github.com/kasparsl/nodejs-jade-nib-stylusapp/issues"
+  },
+  "homepage": "https://github.com/kasparsl/nodejs-jade-nib-stylusapp"
+}
