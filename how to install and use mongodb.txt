@@ -1,0 +1,89 @@
+install mangodb:
+
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
+
+echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' | sudo tee /etc/apt/sources.list.d/mongodb.list
+
+
+sudo apt-get update
+
+mkdir ~/data/db
+
+sudo apt-get install mongodb-10gen
+
+sudo service mongodb start
+
+start: Job is already running: mongodb
+
+ start mongodb shell
+
+~$ mongo
+MongoDB shell version: 2.4.9
+connecting to: test
+Welcome to the MongoDB shell.
+For interactive help, type "help".
+For more comprehensive documentation, see
+	http://docs.mongodb.org/
+Questions? Try the support group
+	http://groups.google.com/group/mongodb-user
+
+//create new db/use old if exists
+> use nodeappdb
+switched to db nodeappdb
+
+db.usercollection.insert({"first_name": "Kaspars", "last_name" : "Kaspars", "username" : "kaspars", "email" : "someemail@gmail.com", "password" : "pass"})
+
+
+> use nodeappdb
+switched to db nodeappdb
+> db.usercollection.insert({"first_name": "Kaspars", "last_name" : "Kasparss", "username" : "kaspars", "email" : "someemail@gmail.com", "password" : "pass"})
+> db.usercollection.find().pretty()
+{
+	"_id" : ObjectId("52eda5eae3984234ec1b75ec"),
+	"first_name" : "Kaspars",
+	"last_name" : "Kaspars",
+	"username" : "kaspars",
+	"email" : "someemail@gmail.com",
+	"password" : "pass"
+}
+
+newusers = [{"first_name": "Roy", "last_name" : "Gord", "username" : "royg", "email" : "royg@gmail.com", "password" : "pass2"}, {"first_name": "Ann", "last_name" : "Marto", "username" : "annmar", "email" : "annmart@gmail.com", "password" : "pass3"}]
+
+
+db.usercollection.insert(newusers)
+
+
+
+> db.usercollection.find().pretty()
+{
+	"_id" : ObjectId("52eda5eae3984234ec1b75ec"),
+	"first_name" : "Kaspars",
+	"last_name" : "Kaspars",
+	"username" : "kaspars",
+	"email" : "someemail@gmail.com",
+	"password" : "pass"
+}
+{
+	"_id" : ObjectId("52eda74fe3984234ec1b75ed"),
+	"first_name" : "Roy",
+	"last_name" : "Gord",
+	"username" : "royg",
+	"email" : "royg@gmail.com",
+	"password" : "pass2"
+}
+{
+	"_id" : ObjectId("52eda74fe3984234ec1b75ee"),
+	"first_name" : "Ann",
+	"last_name" : "Marto",
+	"username" : "annmar",
+	"email" : "annmart@gmail.com",
+	"password" : "pass3"
+}
+> 
+
+
+
+
+
+
+
